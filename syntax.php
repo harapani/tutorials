@@ -39,3 +39,10 @@ class CoreAPI
 		return $this->array_data = $data;
 	}
 }
+
+// Case Sensitif
+
+$hobby = 'Hiking';
+
+echo "My Hobby is " . $hobby ."<br>";
+echo "My Hobby is " . $HOBBY;

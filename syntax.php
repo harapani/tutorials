@@ -21,3 +21,21 @@ This is a multiple-lines comment block 	  | Block comments
 that spans over multiple 				  |
 lines 								    ---
 */
+
+/**
+ * This is a new Class for my Application Library
+ */
+class CoreAPI
+{
+	protected $array_data = []; // this is a property or array data
+
+	/**
+	 * Core Setting Application
+	 * @param  array  $data This param must be an array to passing in core settings
+	 * @return array
+	 */
+	public function settings(array $data)
+	{
+		return $this->array_data = $data;
+	}
+}

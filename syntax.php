@@ -1,4 +1,6 @@
 <?php
+date_default_timezone_set('Asia/Jakarta');
+error_reporting(E_ALL);
 
 /*
 Comments in PHP
@@ -28,6 +30,7 @@ lines 								    ---
 class CoreAPI
 {
 	protected $array_data = []; // this is a property or array data
+	public $name;
 
 	/**
 	 * Core Setting Application
@@ -42,7 +45,92 @@ class CoreAPI
 
 // Case Sensitif
 
-$hobby = 'Hiking';
+// $hobby = 'Hiking';
 
-echo "My Hobby is " . $hobby ."<br>";
-echo "My Hobby is " . $HOBBY;
+// echo "My Hobby is " . $hobby ."<br>";
+// echo "My Hobby is " . $HOBBY;
+
+// $x = 5; // global scope
+ 
+// function myTest() {
+//     // using x inside this function will generate an error
+//     echo "<p>Variable x inside function is: $x</p>";
+// } 
+// myTest();
+
+// echo "<p>Variable x outside function is: $x</p>";
+
+// Type data Object
+$object = file_get_contents('data.json');
+$integer = 21;
+$string = 'Hello World $boolean';
+$boolean = false;
+$null = null;
+
+$coreAPI = new CoreAPI();
+$coreAPI->name = 'web';
+// $x = "Hello world! $boolean";
+// $x = null;
+
+$hello = addslashes("What does 'yolo' mean?");
+
+define("GREETING", "Welcome to W3Schools.com!");
+
+$x = 5;
+$y = 3;
+
+$greeting = 'Hello, World';
+
+$name = [
+	'Harpani',
+	'Imam',
+	'Ratna'
+];
+
+$t = date("H");
+
+// if ($t >= "18" && $t <= "24") {
+//     echo "Selamat Malam";
+// } elseif ($t >= "14" && $t <= "18") {
+// 	echo "Selamat Sore";
+// } elseif ($t >= "11" && $t <= "14") {
+// 	echo "Selamat Siang";
+// } else {
+// 	echo "Selamat Pagi";
+// }
+
+// switch ($t) {
+// 	case $t >= "18" && $t <= "24":
+// 		echo "Selamat Malam";
+// 		break;
+// 	case $t >= "14" && $t <= "18":
+// 		echo "Selamat Sore";
+// 		break;
+// 	case $t >= "11" && $t <= "14":
+// 		echo "Selamat Siang";
+// 		break;
+// 	default:
+// 		echo "Selamat Siang";
+// 		break;
+// }
+
+function tanyaJam($t='')
+{
+	if ($t == '') {
+		echo "Hai user, lu ga kasih gua parameter!";
+		exit;
+	}
+
+	if ($t >= "18" && $t <= "24") {
+	    echo "Selamat Malam sekarang jam " . date('H:i');
+	} elseif ($t >= "14" && $t <= "18") {
+		echo "Selamat Sore sekarang jam " . date('H:i');
+	} elseif ($t >= "11" && $t <= "14") {
+		echo "Selamat Siang sekarang jam " . date('H:i');
+	} else {
+		echo "Selamat Pagi sekarang jam " . date('H:i');
+	}
+}
+
+echo "<pre>";
+print_r($_SERVER);
